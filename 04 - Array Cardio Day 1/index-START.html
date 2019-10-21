@@ -34,28 +34,28 @@
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     const inventorsBorn1500s = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
-    console.table(inventorsBorn1500s);
+    console.table(`inventorsBorn1500s:`, inventorsBorn1500s);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
     const inventorsName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-    console.log(inventorsName);
+    console.log('inventorsName:', inventorsName);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
     const orderedByBirthdate = inventors.sort((a, b) => (a.year - b.year));
-    console.table(orderedByBirthdate);
+    console.table('orderedByBirthdate:', orderedByBirthdate);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
     const totalYears = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
-    console.log(totalYears);
+    console.log('totalYears:', totalYears);
 
 
     // 5. Sort the inventors by years lived
     const yearsLived = inventors.map(inventor => inventor.passed - inventor.year);
     const oldest = yearsLived.sort((a, b) => b - a);
-    console.table(oldest);
+    console.table('Oldest:', oldest);
 
 
 
@@ -71,7 +71,7 @@
       //return aLast > bLast ? 1 : -1;
       aLast - bLast;
     });
-    console.log(alpha);
+    console.log('Alpha:', alpha);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
@@ -79,7 +79,7 @@
 
     const count = {};
     data.forEach((i) => { count[i] = (count[i] || 0) + 1 });
-    console.log(count);
+    console.log(`Count:`, count);
   </script>
 </body>
 
